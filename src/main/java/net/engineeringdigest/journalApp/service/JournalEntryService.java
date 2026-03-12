@@ -28,5 +28,9 @@ public class JournalEntryService {
         return journalRepository.findById(myid);
     }
 
+    public void deleteByid(ObjectId id){
+    journalRepository.deleteById(id);
+    }
+
 
 }
