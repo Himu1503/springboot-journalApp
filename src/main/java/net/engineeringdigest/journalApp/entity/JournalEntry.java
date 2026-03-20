@@ -1,9 +1,6 @@
 package net.engineeringdigest.journalApp.entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -17,6 +14,7 @@ import java.util.List;
 
 @Document(collection =  "journal_entries")
 @Data
+@NoArgsConstructor
 public class JournalEntry {
 
     @Id
@@ -27,9 +25,5 @@ public class JournalEntry {
     private LocalDateTime date;
 
 
-
-    
-    @DBRef
-    private List<JournalEntry> journalEntries = new ArrayList<>();
 
 }
